@@ -6,6 +6,6 @@ link: https://perk-bevis.github.io/example_code/
 
 var headingElement = document.querySelector('.heading');
 
-console.log(headingElement.textcontent); // geter 
+console.log(headingElement.innerText); // geter 
 
 headingElement.textcontent =new heading // seter
