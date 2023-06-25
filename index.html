@@ -140,9 +140,11 @@
         line.style.width = tabActive.offsetWidth + "px";
         });
 
+        //foreach:  duyệt qua từng phần tử của mảng
         tabs.forEach((tab, index) => {
         const pane = panes[index];
 
+        //hàm lắng nghe
         tab.onclick = function () {
         $(".tab-item.active").classList.remove("active");
         $(".tab-pane.active").classList.remove("active");
