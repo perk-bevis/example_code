@@ -124,12 +124,14 @@
         </div>
     </div>
     <script>
+        //bind() cho phép dễ dàng thiết lập đối tượng cụ thể sẽ bị ràng buộc khi 1 chức năng hoặc 1 phương pháp đc gọi
+        //hay bind() dùng để xd tham số this cho 1 function()
         const $ = document.querySelector.bind(document);
         const $$ = document.querySelectorAll.bind(document);
 
         const tabs = $$(".tab-item");
         const panes = $$(".tab-pane");
-
+        
         const tabActive = $(".tab-item.active");
         const line = $(".tabs .line");
 
@@ -140,18 +142,19 @@
         line.style.width = tabActive.offsetWidth + "px";
         });
 
-        //foreach:  duyệt qua từng phần tử của mảng
+        //foreach:  duyệt qua từng phần tử của mảng (lằng nghe)
         tabs.forEach((tab, index) => {
         const pane = panes[index];
 
-        //hàm lắng nghe
+        //hàm lắng nghe sự kiện click
         tab.onclick = function () {
+            //tìm 1 thằng nào đang có class active thì gỡ bỏ nó điđi
         $(".tab-item.active").classList.remove("active");
         $(".tab-pane.active").classList.remove("active");
 
         line.style.left = this.offsetLeft + "px";
         line.style.width = this.offsetWidth + "px";
-
+        //add class active vào menu
         this.classList.add("active");
         pane.classList.add("active");
         };
